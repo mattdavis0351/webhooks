@@ -18,6 +18,7 @@ async function run() {
   owner: ctx.repo.owner,
   repo: ctx.repo.repo,
   branch: ctx.ref,
+  path: '.github',
 });
 
     console.log(data);
