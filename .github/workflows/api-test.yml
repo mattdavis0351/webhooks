@@ -1,1 +1,15 @@
 name: api test
+
+on:
+  workflow_dispatch:
+    branches-ignore: master
+jobs:
+  test-write:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v2
+      - name: try to write
+        uses: ./.github/actions/writer
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
