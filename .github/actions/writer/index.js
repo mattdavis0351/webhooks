@@ -18,7 +18,7 @@ async function run() {
   owner: ctx.repo.owner,
   repo: ctx.repo.repo,
   branch: ctx.ref,
-  path: '.github',
+  path: '.github/actions/writer',
 });
 
     console.log(data);
