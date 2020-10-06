@@ -9,7 +9,7 @@ async function run() {
     const res = await octokit.repos.createOrUpdateFileContents({
       owner: ctx.repo.owner,
       repo: ctx.repo.repo,
-      path: `./docs/somefile.md`,
+      path: path.resolve(`docs/somefile.md`),
       message: "initial template setup",
       content: Buffer.from("some super simple test").toString("base64"),
       branch: ctx.ref,
@@ -20,3 +20,5 @@ async function run() {
     core.setFailed(error);
   }
 }
+
+run();
