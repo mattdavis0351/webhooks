@@ -14,13 +14,13 @@ async function run() {
 //       content: Buffer.from("some super simple test").toString("base64"),
 //       branch: ctx.ref,
 //     });
-    const res = await octokit.repos.getContent({
+    const {data} = await octokit.repos.getContent({
   owner: ctx.repo.owner,
   repo: ctx.repo.repo,
   branch: ctx.ref,
 });
 
-    console.log(res);
+    console.log(data);
   } catch (error) {
     core.setFailed(error);
   }
