@@ -1,1 +1,11 @@
 name: ci with "jest"
+on:
+  workflow_dispatch:
+  
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: run tests
+        run: echo "dude, I run commands... simple right"
